@@ -6,7 +6,7 @@ var randomNumber = function(min, max) {
 };
 
 
-
+/* FIGHT BEGINS! */
 // fight function
 var fight = function(enemy) {
     while (playerInfo.health > 0 && enemy.health > 0) {
@@ -69,6 +69,7 @@ var fight = function(enemy) {
     } // end of while loop
 }; // end of fight function
 
+/* START GAME */
 // function to start a new game
 var startGame = function() {
   // reset player stats
@@ -112,6 +113,7 @@ var startGame = function() {
   endGame();
 }
 
+/* CONQUERED or GAMEOVER: PLAY AGAIN? */
 // function to end the entire game
 var endGame = function() {
   window.alert("The game has now ended. Let's see how you did!");
@@ -133,6 +135,7 @@ var endGame = function() {
   }
 };
 
+/* SHOP */
 // go to shop between battles function
 var shop = function() {
   // ask player what they'd like to do
@@ -171,7 +174,7 @@ var shop = function() {
 
 // player information
 var playerInfo = {
-  name: window.prompt("What is your robot's nam?"),
+  name: window.prompt("What do you call this... BEAST?"),
   health: 100,
   attack: 10,
   money: 10,
