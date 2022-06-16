@@ -1,57 +1,11 @@
+// function to generate a random numeric value
 var randomNumber = function(min, max) {
   var value = Math.floor(Math.random() * (max - min + 1) + min);
 
   return value;
 };
 
-var playerInfo = {
-  name: window.prompt("What is your robot's nam?"),
-  health: 100,
-  attack: 10,
-  money: 10,
-  reset: function() {
-    this.health = 100;
-    this.money = 10;
-    this.attack = 10;
-  },
 
-  refillHealth: function() {
-    if (this.money >= 7) {
-      window.alert("Refilling player's health by 20 for $7.");
-      this.health += 20;
-      this.money -+ 7;
-    }
-    else {
-      window.alert("You don't have enough money!");
-    }
-  },
-
-  upgradeAttack: function() {
-    if (this.money >= 7) {
-      window.alert("Upgrading player's attack by 6 for $7.");
-      this.attack += 6;
-      this.money -= 7;
-    }
-    else {
-      window.alert("You don't have enough money!");
-    }
-  }
-};
-
-var enemyInfo = [
-  {
-    name: "Laser",
-    attack: randomNumber(10, 14)
-  },
-  {
-    name: "Blazer",
-    attack: randomNumber(10, 14)
-  },
-  {
-    name: "Michele",
-    attack: randomNumber(10, 14)
-  }
-];
 
 // fight function
 var fight = function(enemy) {
@@ -113,7 +67,7 @@ var fight = function(enemy) {
         window.alert(playerInfo.name + ' still has ' + playerInfo.health + ' health left.');
       }
     } // end of while loop
-  }; // end of fight function
+}; // end of fight function
 
 // function to start a new game
 var startGame = function() {
@@ -211,5 +165,67 @@ var shop = function() {
   }
 };
 
-// start first game when page loads
+/* End game functions */
+
+/* Game information / Variables */
+
+// player information
+var playerInfo = {
+  name: window.prompt("What is your robot's nam?"),
+  health: 100,
+  attack: 10,
+  money: 10,
+  reset: function() {
+    this.health = 100;
+    this.money = 10;
+    this.attack = 10;
+  },
+
+  refillHealth: function() {
+    if (this.money >= 7) {
+      window.alert("Refilling player's health by 20 for $7.");
+      this.health += 20;
+      this.money -+ 7;
+    }
+    else {
+      window.alert("You don't have enough money!");
+    }
+  },
+
+  upgradeAttack: function() {
+    if (this.money >= 7) {
+      window.alert("Upgrading player's attack by 6 for $7.");
+      this.attack += 6;
+      this.money -= 7;
+    }
+    else {
+      window.alert("You don't have enough money!");
+    }
+  }
+};
+
+// enemy information
+var enemyInfo = [
+  {
+    name: "Laser",
+    attack: randomNumber(10, 14)
+  },
+  {
+    name: "Blazer",
+    attack: randomNumber(10, 14)
+  },
+  {
+    name: "Michele",
+    attack: randomNumber(10, 14)
+  }
+];
+
+console.log(enemyInfo);
+console.log(enemyInfo[0]);
+console.log(enemyInfo[0].name);
+console.log(enemyInfo[0]["attack"]);
+
+/* end game information / variables */
+
+/* RUN GAME */
 startGame();
